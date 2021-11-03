@@ -304,21 +304,7 @@ form input[type="button"]:hover {
   }
 }
 
-.select {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 32px;
-  position: relative;
-}
-
-.select h2 {
+h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,78 +312,11 @@ form input[type="button"]:hover {
   font-weight: 700;
   color: #2A2A2A;
   letter-spacing: 1.12px;
+  margin-top: 32px;
 }
 
-.select h2 span {
+h2 span {
   display: none;
-}
-
-.select select {
-  color: #2A2A2A;
-  font-size: initial;
-  letter-spacing: 1px;
-  border: 1px solid #9A9A9A;
-  border-radius: 4px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: 8px 50px 8px 16px;
-}
-
-.select select:hover {
-  cursor: pointer;
-}
-
-@media (max-width: 568px) {
-  .select select {
-    display: none;
-  }
-}
-
-.select::after {
-  content: "";
-  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-  width: 12px;
-  height: 8px;
-  background: #000;
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-@media (max-width: 568px) {
-  .select::after {
-    display: none;
-  }
-}
-
-.select.select-mb {
-  display: none;
-}
-
-@media (max-width: 568px) {
-  .select.select-mb {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    position: fixed;
-    right: 10px;
-    bottom: 0;
-  }
-  .select.select-mb select {
-    display: block;
-    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px 22px;
-  }
-  .select.select-mb::after {
-    display: block;
-  }
 }
 
 .scroll-table {

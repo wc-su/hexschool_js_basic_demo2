@@ -157,74 +157,18 @@ form {
     }
 }
 
-.select {
+h2 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2A2A2A;
+    letter-spacing: 1.12px;
     margin-top: 32px;
-    position: relative;
-    h2 {
-        display: flex;
-        font-size: 18px;
-        font-weight: 700;
-        color: #2A2A2A;
-        letter-spacing: 1.12px;
-        span {
-            display: none;
-        }
-    }
-    select {
-        color: #2A2A2A;
-        font-size: initial;
-        letter-spacing: 1px;
-        border: 1px solid #9A9A9A;
-        border-radius: 4px;
-        appearance: none;
-        padding: 8px 50px 8px 16px;
-        &:hover {
-            cursor: pointer;
-        }
-        @include mobile() {
-            display: none;
-        }
-    }
-    &::after {
-        content: "";
-        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-        width: 12px;
-        height: 8px;
-        background: #000;
-        position: absolute;
-        top: 50%;
-        right: 16px;
-        transform: translate(0, -50%);
-        @include mobile() {
-            display: none;
-        }
-    }
-    &.select-mb {
+    span {
         display: none;
     }
-    @include mobile() {
-        // 手機模式
-        &.select-mb {
-            justify-content: flex-end;
-            position: fixed;
-            right: 10px;
-            bottom: 0;
-            select {
-                display: block;
-                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.7);
-                padding: 10px 22px;
-            }
-            &::after {
-                display: block;
-            }
-        }
-    }
 }
+
 .scroll-table {
     overflow-x: auto;
 }

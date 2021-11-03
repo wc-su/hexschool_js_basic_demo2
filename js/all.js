@@ -15,26 +15,18 @@ $(document).ready(function () {
     ];
 
     const list = $(".main table");
-    const select = $("select");
 
     let listHeader = `<tr class="list-header">`;
-    let selectItem = "";
     $.each(tableHeader, function (index, value) {
         if(value == "作物名稱" || value == "市場名稱") {
             listHeader += `<th>${value.substr(0, 2)}<span>${value.substr(2, 2)}</span></th>`;
         } else {
             listHeader += `<th class="th-sort">${value}`;
             listHeader += `<i class="fas fa-sort-up"></i><i class="fas fa-sort-down"></i></th>`;
-            if($(select).parent().hasClass("select-mb")) { // 手機模式
-                selectItem += `<option value="${value}">${value}</option>`;
-            } else {
-                selectItem += `<option value="${value}">依 ${value} 排序</option>`;
-            }
         }
     });
     listHeader += `</tr><tr class="list-item"><td colspan="${tableHeader.length}">請輸入並搜尋想比價的作物名稱^＿^</td></tr>`;
     list.append(listHeader);
-    select.append(selectItem);
 
     $(".type li").on("click", function () {
         $(".type li").removeClass("type-active");
@@ -130,19 +122,16 @@ $(document).ready(function () {
             let type = $(".type .type-active").text();
             let name = $(".search form input[type=text]").val().trim();
             if(name == "") {
-                $(".select h2 span").text(`「${type}」的`);
+                $("h2 span").text(`「${type}」的`);
             } else {
-                $(".select h2 span").text(`「${name}」的`);
+                $("h2 span").text(`「${name}」的`);
             }
-            $(".select h2 span").css("display", "block");
+            $("h2 span").css("display", "block");
         } else {
             if(pageAll == 0) {
                 // 更新表格顯示資訊：查無資料
                 listItem = `<tr class="list-item"><td colspan="${tableHeader.length}">查詢不到當日的交易資訊QQ</td></tr>`;
                 // console.log("1", "windowWidth", windowWidth);
-                if(windowWidth <= 568) {
-                    $(".select-mb").css("display", "none");
-                }
             } else {
                 let count = 0;
                 let i = (pageNow - 1) * onePageNum;
@@ -166,9 +155,6 @@ $(document).ready(function () {
                 }
                 showPage();
                 // console.log("2", "windowWidth", windowWidth);
-                if(windowWidth <= 568) {
-                    $(".select-mb").css("display", "block");
-                }
             }
         }
         $(list).append(listItem);
@@ -225,21 +211,6 @@ $(document).ready(function () {
         }
         pageNow = parseInt($(element).attr("data-page"));
         showList("done");
-    });
-
-    // $("select").on("click", function (e) {
-    $("select").on("change", function (e) {
-        console.log(e.target.value);
-        let select = e.target.value;
-        if(select == "") {
-            return;
-        }
-        // 降冪排列
-        filterData.sort(function(a, b) {
-            return a[select] - b[select];
-        });
-        pageNow = 1;
-        showList("down");
     });
 
     function test(check, page) {
