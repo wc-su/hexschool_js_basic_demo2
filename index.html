@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>農產品比價網</title>
+
+    <link rel="icon" href="https://www.hexschool.com/favicon.ico" />
+    
+    <meta name="description" content="JavaScript 必修篇 - 前端修練全攻略 - 農產品比價網" />
+    <meta name="keywords" content="HexSchool, HTML, CSS, RWD, 農產品比價網"/>
+    <meta name="author" content="su"/>
+    <meta name="copyright" content="版權歸屬"/>
+    
+    <meta property="og:title" content="農產品比價網"/>
+    <meta property="og:description" content="由 su 所練習的農產品比價網"/>
+    <meta property="og:url" content="https://wc-su.github.io/hexschool_js_basic_demo2/"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/logo-sm.png" />
+    <meta property="og:image:type" content="png" />
+    <meta property="og:image:width" content="150" />
+    <meta property="og:image:height" content="70" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <div class="container">
+        <h1><a href="index.html">農產品比價網</a></h1>
+        <div class="main">
+            <div class="search">
+                <ul class="type">
+                    <li class="type-active">蔬菜</li>
+                    <li>水果</li>
+                    <li>花卉</li>
+                </ul>
+                <form>
+                    <div class="crop-name">
+                        <label for="crop">作物名稱</label>
+                        <input type="text" name="crop" id="crop" placeholder="請輸入作物名稱">
+                    </div>
+                    <input type="button" value="搜尋" class="search-btn">
+                </form>
+            </div>
+            <div class="select">
+                <h2>查看<span></span>比價結果</h2>
+                <!-- <select>
+                    <option value="">排序篩選</option>
+                </select> -->
+            </div>
+            <div class="scroll-table">
+                <table></table>
+            </div>
+            <ul class="tablePage">
+                <!-- data-page 用來記錄頁數 -->
+                <li class="prev" data-page=0><i class="fas fa-angle-left"></i></li>
+                <li class="next" data-page=0><i class="fas fa-angle-right"></i></li>
+            </ul>
+            <!-- <div class="select select-mb">
+                <select>
+                    <option value="排序篩選">排序</option>
+                </select>
+            </div> -->
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/all.js"></script>
+</body>
+</html>
