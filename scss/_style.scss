@@ -44,12 +44,15 @@ h1 {
     box-shadow: 0 0 0 3px #F8D45A, 0 0 0 8px #FFFCEF, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
     padding: 40px;
     margin-top: 24px;
+    @include tablet(){
+        padding: 20px 16px;
+    }
     @include mobile() {
         padding: 16px 12px;
     }
 }
 
-.type {
+.category {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -76,7 +79,7 @@ h1 {
             cursor: pointer;
             background: rgba(248, 211, 90, 0.3);
         }
-        &.type-active {
+        &.category-active {
             background: #F8D45A;
         }
         @include mobile() {
@@ -94,11 +97,10 @@ h1 {
         }
     }
 }
-form {
+.search {
     width: 100%;
     display: flex;
     justify-content: center;
-    // overflow: hidden;
     margin-top: 20px;
     @include mobile() {
         flex-direction: column;
@@ -107,17 +109,19 @@ form {
         display: flex;
         border: 2px solid #899E39;
         border-radius: 4px;
-        @include mobile() {
-            // width: 100%
-        }
         label {
             color: #FFFFFF;
             font-weight: 700;
             letter-spacing: 1px;
+            text-align: center;
             background: #899E39;
             padding: 8px 15px;
+            @include tablet() {
+                width: 35%;
+            }
             @include mobile() {
-                width: 35%
+                padding: 8px 10px;
+                width: 35%;
             }
         }
         input[type="text"] {
@@ -131,8 +135,11 @@ form {
             &:focus {
                 outline: none;
             }
+            @include tablet() {
+                width: 65%;
+            }
             @include mobile() {
-                width: 65%
+                // width: 65%
             }
         }
     }
@@ -166,6 +173,9 @@ h2 {
     margin-top: 32px;
     span {
         display: none;
+        &.display {
+            display: block;
+        }
     }
 }
 
@@ -190,7 +200,7 @@ table {
             font-weight: 700;
             letter-spacing: 1px;
             position: relative;
-            padding: 12px 17px 12px 12px;
+            padding: 12px 22px 12px 12px;
             &.th-sort:hover {
                 cursor: pointer;
                 color: rgba(42, 42, 42, 0.5);
@@ -204,14 +214,18 @@ table {
                 &.sort-active {
                     color: rgb(42, 42, 42);
                 }
-                // &:hover {
-                //     cursor: pointer;
-                // }
+            }
+            @include tablet() {
+                font-size: 14px;
             }
             @include mobile() {
-                padding: 10px 3px;
+                font-size: 12px;
+                padding: 10px 11px 10px 3px;
                 span {
                     display: none;
+                }
+                i {
+                    right: 1px;
                 }
             }
         }
@@ -224,17 +238,27 @@ table {
             &.font-bold {
                 font-weight: 700;
             }
+            @include tablet() {
+                font-size: 14px;
+            }
             @include mobile() {
-                padding: 10px 3px;
+                font-size: 12px;
+                padding: 10px 1px;
+                span {
+                    display: none;
+                }
             }
         }
     }
 }
-.tablePage {
+.table-page {
     display: flex;
     visibility: hidden;
     justify-content: center;
     margin-top: 10px;
+    &.visible {
+        visibility: visible;
+    }
     li {
         background: #FFFFFF;
         border: 1px solid #899E39;

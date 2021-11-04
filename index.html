@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>農產品比價網</title>
-
+    
     <link rel="icon" href="https://www.hexschool.com/favicon.ico" />
     
     <meta name="description" content="JavaScript 必修篇 - 前端修練全攻略 - 農產品比價網" />
@@ -31,28 +31,26 @@
     <div class="container">
         <h1><a href="index.html">農產品比價網</a></h1>
         <div class="main">
+            <ul class="category">
+                <li class="category-active">蔬菜</li>
+                <li>水果</li>
+                <li>花卉</li>
+            </ul>
             <div class="search">
-                <ul class="type">
-                    <li class="type-active">蔬菜</li>
-                    <li>水果</li>
-                    <li>花卉</li>
-                </ul>
-                <form>
-                    <div class="crop-name">
-                        <label for="crop">作物名稱</label>
-                        <input type="text" name="crop" id="crop" placeholder="請輸入作物名稱">
-                    </div>
-                    <input type="button" value="搜尋" class="search-btn">
-                </form>
+                <div class="crop-name">
+                    <label for="crop">作物名稱</label>
+                    <input type="text" name="crop" id="crop" placeholder="請輸入作物名稱">
+                </div>
+                <input type="button" value="搜尋" class="search-btn">
             </div>
             <h2>查看<span></span>比價結果</h2>
             <div class="scroll-table">
                 <table></table>
             </div>
-            <ul class="tablePage">
+            <ul class="table-page">
                 <!-- data-page 用來記錄頁數 -->
-                <li class="prev" data-page=0><i class="fas fa-angle-left"></i></li>
-                <li class="next" data-page=0><i class="fas fa-angle-right"></i></li>
+                <li class="page-prev" data-page=0><i class="fas fa-angle-left"></i></li>
+                <li class="page-next" data-page=0><i class="fas fa-angle-right"></i></li>
             </ul>
         </div>
     </div>
